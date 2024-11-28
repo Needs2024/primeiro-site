@@ -1,75 +1,69 @@
-/* Reset básico de margem e padding */
-* {
+body {
+    background-color: #4ca146;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    color: #fffefe;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    text-align: center; /* Centraliza todo o texto na página */
 }
 
-/* Corpo principal da página */
-body {
-    background-color: #4ca146; /* Cor de fundo */
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #fffefe; /* Cor do texto */
-    font-size: 21px;
-    text-align: center; /* Centraliza o conteúdo */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-/* Títulos principais */
-h1 {
+/* Estilo para o título com animação */
+.animated-title {
     color: #fffefe;
-    font-size: 2.5em;
+    font-size: 36px;
     margin-bottom: 20px;
+    opacity: 0; /* Faz o título começar invisível */
+    animation: fadeIn 2s forwards, bounce 1s infinite alternate; /* Adiciona animação de fade-in e bounce */
 }
 
-/* Parágrafos - Justificando texto */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 p {
     color: #fffefe;
-    text-align: justify; /* Justifica o texto */
     font-size: 21px;
     line-height: 1.6;
-    margin-bottom: 20px;
-    max-width: 800px; /* Limita a largura do texto */
+    padding: 0 20px;
+    max-width: 800px; /* Limita a largura dos parágrafos */
+    margin: 0 auto 20px auto; /* Centraliza os parágrafos */
 }
 
-/* Imagens - Redimensiona e centraliza */
 img {
-    width: 100%;
-    height: auto;
-    max-width: 750px; /* Define a largura máxima para imagens */
-    margin-bottom: 20px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
 }
 
-/* Estilo para links */
-a {
-    color: #fffefe;
-    text-decoration: none;
+ul {
+    list-style-position: inside;
+    padding: 0;
+    max-width: 800px; /* Limita a largura das listas */
+    margin: 0 auto 20px auto; /* Centraliza as listas */
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-/* Estilos para o layout responsivo */
-@media (max-width: 768px) {
-    body {
-        font-size: 18px; /* Ajusta o tamanho da fonte para dispositivos menores */
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 2em; /* Ajusta o tamanho do título */
-    }
-
-    img {
-        width: 100%; /* Faz as imagens ocuparem toda a largura da tela */
-        height: auto;
-    }
+li {
+    text-align: left; /* Alinha o texto das listas à esquerda */
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
